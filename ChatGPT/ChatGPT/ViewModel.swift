@@ -15,8 +15,7 @@ class ViewModel: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     @Published var messageText: String = ""
     @Published var cancellable = Set<AnyCancellable>()
-//     var showsIndicators: Bool = false
-  
+    
     let openAIService = OpenAINetworkService()
     typealias StringCompletionOne = (String) -> Void
     
@@ -38,7 +37,6 @@ class ViewModel: ObservableObject {
                 .foregroundColor(message.sender == .user ? .white : .white)
                 .padding()
                 .background(message.sender == .user ? Color("MatrixColor").opacity(0.2) : .black.opacity(0.5))
-//                .background(message.sender == .user ? Color("AccentColor").opacity(0.9) : .black.opacity(0.5))
                 .cornerRadius(12)
             if message.sender == .gpt {
                 Spacer()
@@ -63,7 +61,7 @@ class ViewModel: ObservableObject {
         messageText = ""
     }
     
-    #if os(watchOS)
+#if os(watchOS)
     func presentInputControllerOne(withSuggestions suggestions: [String], completion: @escaping StringCompletionOne) {
         WKExtension.shared()
             .visibleInterfaceController?
@@ -78,7 +76,7 @@ class ViewModel: ObservableObject {
                 completion(firstElement)
             }
     }
-    #endif
+#endif
     
     
 }

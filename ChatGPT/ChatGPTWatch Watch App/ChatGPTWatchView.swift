@@ -10,8 +10,6 @@ import SwiftUI
 
 
 struct ChatWatchView: View {
-    
-//    @Binding var isPresented: Bool
     @StateObject var vm = ViewModel()
     
     var body: some View {
@@ -39,7 +37,6 @@ struct ChatWatchView: View {
                         vm.clearMessages()
                     } label: {
                         Image(systemName: "trash.fill")
-//                            .disabled(vm.isInteracting || vm.chatMessages.isEmpty)
                             .frame(width: 40, height: 16)
                             .font(.system(size: 18))
                             .foregroundColor(Color("MatrixColor"))
@@ -62,7 +59,7 @@ struct ChatWatchView: View {
                             }
                         }
                     }
-                   
+                    
                     
                 label: {
                     Image(systemName: "paperplane.fill")
@@ -75,22 +72,16 @@ struct ChatWatchView: View {
                         .clipShape( RoundedRectangle(cornerRadius: 18, style: .continuous))
                 }
                 .padding(.leading, 12)
-                                                            .tint(.clear)
+                .tint(.clear)
                     
                 }
-//                .padding(.leading, 2)
-//                .padding(.trailing, 2)
                 .padding(.bottom, -8)
-//                .padding(.top, 2)
-                //                                        .background(.clear)
-                //                                        .padding()
             }
             .padding()
             .overlay {
                 if vm.chatMessages.isEmpty {
                     Text("Tap send to ChatGPT")
                         .font(.system(size: 12))
-                    
                 }
             }
             .background(
@@ -110,6 +101,5 @@ struct ChatWatchView: View {
 }
 
 #Preview {
-//    ChatWatchView(isPresented: .constant(true))
     ChatWatchView()
 }

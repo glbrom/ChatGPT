@@ -14,8 +14,5 @@ extension View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 15)
             .background(color, in: .rect(cornerRadius: 15))
-       
-//            .background(Color("\(color)"))
-//            .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }

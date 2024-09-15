@@ -33,8 +33,6 @@ class OpenAINetworkService {
 }
 
 enum Constants {
-//    static let openAIApiKey = "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"
-//    static let openAIApiKey = "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"
     static let openAIApiKey = "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"
     static let baseUrl = "https://api.openai.com/v1/completions"
 }

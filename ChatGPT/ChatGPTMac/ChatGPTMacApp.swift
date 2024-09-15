@@ -9,22 +9,20 @@ import SwiftUI
 
 @main
 struct ChatGPTMacApp: App {
-
+    
     var body: some Scene {
         MenuBarExtra("ChatGPT", image: "ToolbarIcon") {
             ZStack {
                 Image("darkSurface1")
                     .resizable()
-//                    .frame(width: 400, height: 1000)
                     .scaledToFill()
-//                    .ignoresSafeArea()
                     .blur(radius: 5, opaque: true)
                 VStack {
                     HStack {
                         
                         Text("ChatGPT").font(.title)
                             .padding(.leading, 6)
-                          
+                        
                         Spacer()
                         Button {
                             exit(0)
@@ -32,7 +30,6 @@ struct ChatGPTMacApp: App {
                             Image(systemName: "xmark")
                                 .frame(width: 1, height: 1)
                                 .font(.system(size: 14))
-//                                .rotationEffect(.degrees(-90))
                                 .foregroundColor(Color.white)
                                 .padding()
                                 .background(Color("AccentColor"))
@@ -40,26 +37,20 @@ struct ChatGPTMacApp: App {
                         }
                         .padding(.trailing, 6)
                         .buttonStyle(.borderless)
-                   
+                        
                     }
                     .padding()
-//                    .padding(.bottom, 8)
-//                    ChatMacView(isPresented: .constant(true))
                     ChatMacView()
                         .padding(.top, -8)
                         .padding(.bottom, 8)
-                        
                     
-            
+                    
+                    
                 }
-//                .background(Image("darkSurface1"))
                 .padding(.top, -12)
-         
+                
             }
-//            .background { RoundedRectangle(cornerRadius: 24, style: .continuous) }
-           
             .frame(width: 440, height: 500)
-            
         }
         .menuBarExtraStyle(.window)
     }
